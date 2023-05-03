@@ -1,24 +1,10 @@
-mod 1 {
-    
+mod day_one {
+    pub mod calorie_counting;
 }
 
-use std::fs::File;
-use std::io::{ self, BufRead, BufReader };
-
+use day_one::calorie_counting::calorie_counting;
 
 
 fn main() {
-    calorie_counting()
-}
-
-
-
-fn calorie_counting(){
-    let file_name = "./calories.txt";
-    let file = File::open(file_name).unwrap();
-    let lines_interator = io::BufReader::new(file).lines(); 
-
-    for line in lines_interator{
-        println!("{}", line.unwrap());
-    }
+    calorie_counting();
 }
